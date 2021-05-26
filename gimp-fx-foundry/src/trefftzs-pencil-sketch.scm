@@ -101,7 +101,7 @@
       ((= inEdges 1)        ; Sobel Edges
        (plug-in-sobel TRUE inImage EdgeLayer TRUE TRUE TRUE))
       ((= inEdges 2)        ; Synthetic Edges
-       (set! tmplayer (car (gimp-layer-copy EdgeLayer TRUE)))
+       (define tmplayer (car (gimp-layer-copy EdgeLayer TRUE)))
        (gimp-image-add-layer inImage tmplayer -1)
        (gimp-layer-set-mode tmplayer DIVIDE-MODE)
        (plug-in-gauss-iir TRUE inImage tmplayer inWeight TRUE TRUE)
